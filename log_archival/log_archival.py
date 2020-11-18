@@ -5,7 +5,7 @@ from datetime import date,datetime
 class Zip:
     def __init__(self, source, destination):
         if not os.path.isdir(destination):
-            print("The destination directory does not exist.\nCreating the said destination directory:")
+            print("The destination directory does not exist....\nCreating the said destination directory:")
             os.mkdir(destination)
             print("Destination directory created.")
         self.src=source
