@@ -1,14 +1,24 @@
-import os
-import zipfile
+import os,time,zipfile
 from datetime import date,datetime
 
-class LogArchival:
+# DEFINING 'ZIP' CLASS
+class Zip:
+    def __init__(self, source, destination):
+        if not os.path.isdir(destination):
+            print("The destination directory does not exist.\nCreating the said destination directory:")
+            os.mkdir(destination)
+            print("Destination directory created.")
+        self.src=source
+        self.dst=destination
 
-    def __init__(self):
-        self.time=datetime.now()
-        self.folder_name=self.time.strftime("%Y""%m""%d")
+# CONFIGURATION SETTINGS
+source_path=""#include a '\' at the end
+target_path=""#include a '\' at the end
 
-obj=LogArchival()
-name=obj.folder_name
-folder_name="ReachClient_"+str(name)
-print(folder_name)
+# SET DESTINATION PATH
+time=datetime.now()
+directory_name=time.strftime("%Y""%m""%d")
+destination_path=target_path+directory_name
+
+# FUNTION CALL
+zipper=Zip(source_path,destination_path)
