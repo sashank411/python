@@ -1,12 +1,17 @@
 import os
 import zipfile
+from datetime import date,datetime
 
-logzip = zipfile.ZipFile('C:\\Stories\\Fantasy\\archive.zip', 'w')
+class LogArchival:
 
-for folder, subfolders, files in os.walk('C:\\Stories\\Fantasy'):
+    def __init__(self):
+        self.time=datetime.now()
+        self.year=self.time.strftime("%Y")
+        self.month=self.time.strftime("%m")
+        self.day=self.time.strftime("%d")
 
-    for file in files:
-        if file.endswith('.pdf'):
-            logzip.write(os.path.join(folder, file), os.path.relpath(os.path.join(folder,file), 'C:\\Stories\\Fantasy'), compress_type = zipfile.ZIP_DEFLATED)
-
-logzip.close()
+obj=LogArchival()
+time=obj.time
+folder_name="ReachClient_"+str(obj.year)+str(obj.month)+str(obj.day)
+print(time)
+print(folder_name)
