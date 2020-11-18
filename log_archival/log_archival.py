@@ -9,7 +9,6 @@ class LogArchival:
         self.folder_name=self.time.strftime("%Y""%m""%d")
 
 obj=LogArchival()
-time=obj.time
 name=obj.folder_name
 folder_name="ReachClient_"+str(name)
 print(folder_name)
